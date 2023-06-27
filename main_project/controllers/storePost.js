@@ -10,7 +10,8 @@ module.exports = (req, res) => {
             title: req.body.title,
             body: req.body.body,
             username: req.body.username,
-            image: '/assets/img/' + image.name
+            image: '/assets/img/' + image.name,
+            userid: req.session.userid
         })
         res.redirect('/')
     })
