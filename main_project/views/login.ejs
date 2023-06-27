@@ -22,33 +22,41 @@
             <div class="container">
                 <div class="row">
                     <div class="col-lg-8 col-md-10 mx-auto">
+                        
+                        <% if(error){ %>
+                            <ul class="list-group"></ul>
+                            <li class="list-group-item list-group-item-danger">
+                                <%= error %>
+                            </li>
+                            </ul>
+                            <% } %>
 
-                        <form action="/users/login" method="POST" enctype="multipart/form-data">
+                                <form action="/users/login" method="POST" enctype="multipart/form-data">
 
-                            <div class="control-group">
-                                <div class="form-group floating-label-form-group controls">
-                                    <label>Username</label>
-                                    <input type="text" class="form-control" placeholder="User Name" id="username"
-                                        name='username'>
-                                </div>
-                            </div>
+                                    <div class="control-group">
+                                        <div class="form-group floating-label-form-group controls">
+                                            <label>Username</label>
+                                            <input type="text" class="form-control" placeholder="User Name"
+                                                id="username" name='username' value="<%= username %>">
+                                        </div>
+                                    </div>
 
-                            <div class="control-group">
-                                <div class="form-group floating-label-form-group controls">
-                                    <label>Password</label>
-                                    <input type="password" class="form-control" placeholder="Password" id="password"
-                                        name="password">
-                                </div>
-                            </div>
+                                    <div class="control-group">
+                                        <div class="form-group floating-label-form-group controls">
+                                            <label>Password</label>
+                                            <input type="password" class="form-control" placeholder="Password"
+                                                id="password" name="password">
+                                        </div>
+                                    </div>
 
-                            <br>
+                                    <br>
 
 
-                            <div class="form-group">
-                                <button type="submit" class="btn btn-primary">Login</button>
-                            </div>
+                                    <div class="form-group">
+                                        <button type="submit" class="btn btn-primary">Login</button>
+                                    </div>
 
-                        </form>
+                                </form>
                     </div>
                 </div>
             </div>
