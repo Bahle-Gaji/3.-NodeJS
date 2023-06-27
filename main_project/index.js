@@ -21,7 +21,7 @@ const http = require('http'),
     redirectIfAuthenticatedMiddleware = require('./middleware/redirectIfAuthenticatedMiddleware'),
     app = new express();
 
-mongoose.connect('mongodb://127.0.0.1/my_database',
+mongoose.connect('mongodb+srv://Bahle:jGwVC7ERySFw@cluster0.4jbexc1.mongodb.net/my_database',
     { useNewUrlParser: true }
 );
 
