@@ -9,7 +9,7 @@ module.exports = (req, res) => {
         .catch(error => {
             const validationErrors = Object.keys(error.errors).map(key => error.errors[key].message)
             req.flash('validationErrors', validationErrors);
-        
+            req.flash('data', req.body);
             res.redirect('/auth/register/');
         })
 }
