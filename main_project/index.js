@@ -6,6 +6,7 @@ const http = require('http'),
     mongoose = require('mongoose'),
     fileUpload = require('express-fileupload'),
     expressSession = require("express-session"),
+    flash = require('connect-flash'),
     newPostController = require('./controllers/newPost'),
     homeController = require('./controllers/home'),
     storePostController = require('./controllers/storePost'),
@@ -40,6 +41,7 @@ app.use('*', (req, res, next) => {
     loggedIn = req.session.userId;
     next()
 });
+app.use(flash());
 app.use('posts/store', validateMiddleware);
 
 
